@@ -1,0 +1,297 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Shop - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      background-color: #006d77 !important;
+      padding: 0.5rem 1rem;
+    }
+    .navbar-brand { color: #ffdd00 !important; font-weight: bold; font-size: 1.5rem; }
+    .nav-link { color: #ffffff !important; margin-right: 15px; }
+    .nav-link:hover { color: #ffdd00 !important; }
+
+    /* ===== Search Bar ===== */
+    .search-bar {
+      flex: 1;
+      display: flex;
+      margin-left: 15px;
+    }
+    .search-bar input {
+      width: 100%;
+      border-radius: 4px 0 0 4px;
+      border: none;
+      padding: 6px 10px;
+    }
+    .search-bar button {
+      border-radius: 0 4px 4px 0;
+      border: none;
+      background-color: #006d77;
+      color: #fff;
+      font-weight: bold;
+      padding: 6px 12px;
+      transition: all 0.3s ease;
+    }
+    .search-bar button:hover { background-color: #005959; }
+
+    /* ===== Carousel / Hero Banner ===== */
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* ===== Product Section ===== */
+    .section-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin: 20px 0 10px 0;
+      color: #111;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      margin-right: 15px;
+      min-width: 180px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .product-title { font-size: 0.9rem; font-weight: 600; color: #111; }
+    .product-price { color: #b12704; font-weight: bold; margin: 5px 0; }
+    .btn-add {
+      background-color: #006d77;
+      border: none;
+      color: #fff;
+      width: 100%;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .btn-add:hover { background-color: #005959; }
+
+    /* Horizontal scroll */
+    .product-row {
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .product-row::-webkit-scrollbar { height: 8px; }
+    .product-row::-webkit-scrollbar-thumb { background-color: #888; border-radius: 4px; }
+    .product-row::-webkit-scrollbar-track { background: #f0f2f5; }
+
+    /* ===== About Section ===== */
+    .about-section {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 30px;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .about-section h3 {
+      color: #006d77;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .about-section p {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .carousel-item img { height: 200px; }
+      .product-card { min-width: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#"> E-Oak Shop</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search products...">
+      <button>Search</button>
+    </div>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      <li class="nav-item"><a class="nav-link" href="Categories.html">Categories</a></li>
+      <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Carousel -->
+  <div id="heroCarousel" class="carousel slide mt-3 mx-3" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+         <img src="Image/Ecommerce-Banner.jpg" alt="Banner 1">
+       </div>
+      <div class="carousel-item active">
+         <img src="Image/AAAA.jpg" alt="Banner 2">
+      </div>
+      <div class="carousel-item">
+         <img src="Image/MK.jpg" alt="Banner 3">
+      </div>
+      <div class="carousel-item">
+         <img src="Image/BBBBB.jpg" alt="Banner 4">
+      </div>
+      <div class="carousel-item">
+         <img src="Image/CCCCC.jpg" alt="Banner 5">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Featured Products -->
+  <div class="container mt-4">
+    <div class="section-title">Featured Electronics</div>
+    <div class="product-row" id="featured-products"></div>
+
+    <div class="section-title">Top Fashion Picks</div>
+    <div class="product-row" id="fashion-products"></div>
+
+    <div class="section-title">Home & Kitchen</div>
+    <div class="product-row" id="home-products"></div>
+
+    <div class="section-title">Sports & Fitness</div>
+    <div class="product-row" id="sports-products"></div>
+  </div>
+
+  <!-- About Section -->
+  <div class="container about-section">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>About Me</h3>
+        <p>
+          Mera naam <b>[Apna Naam]</b> hai. Main is website ka creator hoon.  
+          Mujhe technology, e-commerce aur web development ka shauk hai.  
+          Is platform ke through main users ko ek best shopping experience dena chahta hoon.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h3>About E-Oak Shop</h3>
+        <p>
+          <b>E-Oak Shop</b> ek modern e-commerce website hai jaha aapko electronics, fashion,  
+          home & kitchen, aur sports products ek hi jagah milte hain.  
+          Humara goal hai ki aapko best quality products aur fast delivery provide karna.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Products
+    const electronics = [
+      { title: 'Apple iPhone 14, (256GB) White - Renewed by Ovantica', price: '₹62,900', img: 'Image/IPhone 14.jpg' },
+      { title: 'Samsung Galaxy S24 5G AI Smartphone (Amber Yellow, 8GB, 128GB Storage) ', price: '₹49,999', img: 'Image/Samsung S23.jpg' },
+      { title: 'HP 15 Intel Core i5 13th Gen 1334U - (16 GB/512 GB SSD/Windows 11 Home) 15-fd0576TU ', price: '₹55,000', img: 'Image/HP Laptop.jpg' },
+      { title: 'Apple AirPods 4 Wireless Earbuds, Bluetooth Headphones, with Active Noise Cancellation', price: '₹15,000', img: 'Image/AirPods.jpg' },
+      { title: 'Apple 2025 MacBook Air (15-inch, Apple M4 chip)', price: '₹1,15,990', img: 'Image/Apple-MacBook.jpg' },
+      { title: 'Invicta Mens Pro Diver Collection Coin-Edge Automatic Watch.jpg', price: '₹1,200', img: 'Image/Automatic Watch.jpg' },
+      { title: 'SAPPHERO Mens Watches Stainless Steel Quartz Watch for Men 30M Waterproof Date Clock', price: '₹2,900', img: 'Image/SAPPHERO Mens.jpg' },
+      { title: 'Samsung Galaxy Tab A9+ Tablet 11” 64GB Android Tablet, Big Screen', price: '₹6,900', img: 'Image/Samsung Galaxy Tab.jpg' },
+      { title: 'OPPSDECOR Multi-Function Weight Bench Set Upgrade Bench Press for Home Gym', price: '₹62,900', img: 'Image/OPPSDECOR.jpg' },
+      { title: '2 Pack Wired iPhone Earbuds Microphone Volume Control Compatible for', price: '₹8,900', img: 'Image/Headphones.jpg' },
+      { title: 'FEIERDUN Adjustable Dumbbells, 20/30/40/45/70/90lbs Free Weight Set', price: '₹15,900', img: 'Image/FEIERDUN.jpg' },
+      { title: 'OnePlus Bullets Wireless Z2 Bluetooth 5.0 in Ear Earphones, Bombastic Bass – 12.4 mm Drivers, 30 Hrs Battery Life', price: '₹62,900', img: 'Image/OnePlus Bullets.jpg' },
+      { title: 'OnePlus Buds 3, Splendid Blue, Deep Bass, ANC, Immersive Sound, Up to 44 Hour Playtime with Charging case, Bluetooth 5.3', price: '₹4,999', img: 'Image/OnePlus Buds.jpg' }
+    ];
+    const fashion = [
+      { title: 'Nike Air Force 1 07 Sneakers', price: '₹7,990', img: 'Image/Nike Shoes.jpg' },
+      { title: 'adidas Mens Essentials 3-Stripes Fleece Hoodie', price: '₹2,999', img: 'Image/Adidas Hoodie.jpg' },
+      { title: 'Ray-Ban Sunglasses', price: '₹7,290', img: 'Image/Ray-Ban Sunglasses.jpg' },
+      { title: 'Puma', price: '₹7,290', img: 'Image/DDDD.jpg' },
+      { title: 'BAESD', price: '₹1,290', img: 'Image/BAESD.jpg' },
+      { title: 'LOreal Professionnel', price: '₹1,190', img: 'Image/LOreal Professionnel.jpg' },
+      { title: 'Theater', price: '₹7,290', img: 'Image/Theater.jpg' },
+      { title: 'Men 511 Grey Slim Fit Mid Rise Jeans' , price: '₹3,000', img: 'Image/Levis Jeans.jpg' },
+      { title: 'Men 3Pcs Leather Accessory Gift Set', price: '₹2099', img: 'Image/One8.jpg' }
+     ];
+    const home = [
+      { title: 'Prestige Omega Select Plus Residue Free Non-Stick Kitchen Set, 3-Pieces, Black/Silver, Aluminium', price: '₹2,499', img: 'Image/Cookware.jpg' },
+      { title: 'Philips HL7756/01 750 Watt Mixer Grinder, 3 Stainless Steel Multipurpose Jars with(Black)', price: '₹4,899', img: 'Image/Mixer.jpg' },
+      { title: 'Probott Bloom 680ml Vacuum Insulated Flask Bottle, Stainless Steel Hot and Cold Water Bottles, Black ', price: '₹1,699', img: 'Image/Bottle.jpg' },
+      { title: 'TRIBBO Stainless Steel Water Bottle 1000 ML, Water Bottles For Fridge, School,Gym,Home,Boys, Girls, Kids, Leak Proof', price: '₹699', img: 'Image/Bottle1.jpg' },
+       { title: 'HOME SKILL®Kitchen Knife Set Stainless Steel 3 Pieces Professional Meat Knife Chef Knife ', price: '₹699', img: 'Image/Knife.jpg' },
+        { title: 'Livpure 60cm 1400m3/hr BLDC Filterless Autoclean Chimney|9 Speed With RPM Display ', price: '₹1,999', img: 'Image/Livpure.jpg' },
+        { title: 'nestroots Wooden Casserole for Roti | 9-Inch Hot Box for Kitchen ', price: '₹1,099', img: 'Image/nestroots Wooden.jpg' },
+        { title: 'BERGNER Earth Black Non-Stick 26 cm Concave Tawa, Wooden Finish Soft Touch Handle ', price: '₹1,699', img: 'Image/BERGNER Earth Black.jpg' },
+        { title: 'Ganesh Plastic Vegetable Slicer Cutter, Black', price: '₹699', img: 'Image/Ganesh Plastic.jpg' },
+        { title: 'VYOOx Toilet Cleaning Brush with Wiper Tiles Cleaning Bathroom Brush Floor Scrub Brush with Long Handle 120° ', price: '₹699', img: 'Image/VYOOx Toilet.jpg' },
+        { title: 'Rotary Drum Vegetable Chopper for Kitchen Use, Manual Onion and Salad Cutter, Multifunctional Slicer Dicer Grater ', price: '₹999', img: 'Image/Rotary Drum.jpg' },
+        { title: 'Multipurpose Mandoline Slicer Dicer Grater Vegetable Chopper for Kitchen, Manual Onion Sabji & Salad Cutter ', price: '₹1,699', img: 'Image/Multipurpose.jpg' },
+        { title: 'Shri & Sam Stainless Steel Shagun Dinner Set | 50 Pcs Set | Serves 6 People - Solid ', price: '₹1,799', img: 'Image/Shri & Sam.jpg' },
+        { title: 'LG 655 L Frost Free Smart Inverter Double Door Side by Side Refrigerator ', price: '₹75,999', img: 'Image/LG 655.jpg' },
+      { title: 'The Sleep Company Luxe Motorised RRR Recliner |Patented SmartGRID Technology', price: '₹19,999', img: 'Image/Luxe Motorised.jpg' }
+     ];
+    const sports = [
+      { title: 'Nivia Rabona Pro Football Size - 5 (Material: Synthetic , Color: Multicolor)', price: '₹599', img: 'Image/Football.jpg' },
+      { title: 'HUNDRED Aluminium Powertek 100 (Set of 2) Badminton Racket with Full Cover (115G, Black/Orange)', price: '₹1,299', img: 'Image/Racquet.jpg' },
+      { title: 'Sparnod Fitness SSB-11 Spin Bike with 11 kg Heavy-duty Flywheel, LED Display, Pulse Sensor, Silent Belt Drive System', price: '₹14,299', img: 'Image/Sparnod.jpg' },
+      { title: 'Sparnod Fitness STH-1200 Motorized Treadmill for Home Use, 4 HP Peak DC Motor, Bluetooth,12 km/hr Speed', price: '₹1,599', img: 'Image/Sparnod Fitness.jpg' },
+      { title: 'DeMarini 2025 Zen USSSA Baseball Bats: -11/-10/-8/-5 Drop', price: '₹1,299', img: 'Image/DeMarini.jpg' },
+      { title: 'Neo Golden Burn Edition Cricket Tennis Ball Bat, Wooden Scoop Design, 900-1050 Grams', price: '₹21,199', img: 'Image/Neo Golden.jpg' },
+      { title: 'SS Cricket Legend Limited Edition Batting Gloves Men, Right Handed (Colors : Blue, Red, Black, White,Green)', price: '₹599', img: 'Image/SS Cricket.jpg' },
+      { title: 'Teenitor Agility Ladder Speed Ladder Training Ladder for Soccer, Speed, Football Fitness Feet Training Carry Bag Agility Training Equipment 13 rungs, 23 feet', price: '₹1,299', img: 'Image/Teenitor Agility.jpg' },
+      { title: 'Agility Ladder, Speed Training Equipment Set, 20ft Agility Ladder, 12 Soccer Cones, 4 Hurdles, Jump Rope, Running Parachute, Basketball Football Soccer Training Equipment for Kids, Youth, Adults ', price: '₹1,299', img: 'Image/Basketball Football.jpg' },
+      { title: 'SG Best Sports 100% Original Brand Cricket Complete Set with Accessories in Full Size (Ideal for Senior Players) Cricket Full Kit', price: '₹15,599', img: 'Image/SG Best Sports.jpg' },
+      { title: 'LEIFIDE 4 Pcs Cricket Bat Protection Sheet Cricket Bat Anti Scuff Sheet Tape Transparent and Clear Face Cover High Viscosity Fiberglass 14.96"x6.69"', price: '₹1,299', img: 'Image/LEIFIDE.jpg' },
+       { title: 'Tennis Balls, 20 Pack Training Tennis Balls,High Elasticity Practice Tennis for Beginner, Exercise Playing Balls for Pet Dog', price: '₹1,299', img: 'Image/Tenni.jpg' },
+      { title: 'Sg Abdominal Guard Tournament', price: '₹1,299', img: 'Image/Abdominal.jpg' },
+      { title: 'SOLM8 S1 Rubber Spikes - Lightweight Cricket Shoes for Men and Women - Durable Grip, Superior Protection (2024 Edition)', price: '₹1,299', img: 'Image/SOLM8 S1.jpg' },
+      { title: 'ForPro Professional Collection Disposable Nitrile Gloves, Chemical Resistant, Powder-Free, Latex-Free, Non-Sterile, Food Safe, 4 Mil, Black, Large, 100-Count', price: '₹1,499', img: 'Image/Gloves.jpg' }
+    ];
+    
+
+    function loadProducts(products, containerId) {
+      const container = document.getElementById(containerId);
+      products.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.title}">
+          <div class="product-title">${p.title}</div>
+          <div class="product-price">${p.price}</div>
+          <button class="btn-add">Add to Cart</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    loadProducts(electronics, 'featured-products');
+    loadProducts(fashion, 'fashion-products');
+    loadProducts(home, 'home-products');
+    loadProducts(sports, 'sports-products');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

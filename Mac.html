@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Shop Desktop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: #f0f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      background: #006d77 !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #ffb703 !important;
+      transition: color 0.3s ease;
+    }
+    .navbar-brand:hover { color: #ffe066 !important; }
+    .nav-link { color: #edf6f9 !important; transition: color 0.3s; }
+    .nav-link:hover { color: #ffb703 !important; }
+
+    /* ===== Search Bar ===== */
+    .search-bar {
+      flex: 1;
+      display: flex;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .search-bar input {
+      width: 100%;
+      border-radius: 4px 0 0 4px;
+      border: none;
+      padding: 6px 10px;
+    }
+    .search-bar button {
+      border-radius: 0 4px 4px 0;
+      border: none;
+      background-color: #006d77;
+      color: #fff;
+      font-weight: bold;
+      padding: 6px 12px;
+      transition: all 0.3s ease;
+    }
+    .search-bar button:hover { background-color: #005959; }
+
+    /* ===== Sidebar ===== */
+    .list-group-item-dark {
+      background: linear-gradient(135deg, #008891, #006d77);
+      color: #edf6f9;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .list-group-item {
+      border-radius: 6px;
+      margin-bottom: 3px;
+      transition: all 0.2s ease-in-out;
+    }
+    .list-group-item:hover {
+      background-color: #caf0f8;
+      transform: translateX(5px);
+      cursor: pointer;
+    }
+
+    /* ===== Product Cards ===== */
+    .product-card {
+      background-color: #edf6f9;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+    .product-card img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .product-title { font-size: 1rem; font-weight: 600; color: #023047; margin-bottom: 5px; }
+    .product-price { color: #fb8500; font-weight: bold; margin-bottom: 10px; }
+
+    .btn-add-to-cart {
+      background: linear-gradient(135deg, #00afb9, #028090);
+      border: none;
+      font-weight: bold;
+      color: #edf6f9;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .btn-add-to-cart:hover {
+      background: linear-gradient(135deg, #028090, #00afb9);
+      transform: scale(1.05);
+      color: #ffb703;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg px-3">
+    <a class="navbar-brand" href="index.html">E-Oak Shop</a>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search products...">
+      <button>Search</button>
+    </div>
+
+    <!-- Navbar Links -->
+    <ul class="navbar-nav ms-auto align-items-center">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      <li class="nav-item"><a class="nav-link" href="Categories.html">Categories</a></li>
+      <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Layout -->
+  <div class="container-fluid mt-4">
+    <div class="row">
+      
+    <!-- Sidebar -->
+      <div class="col-md-3 mb-3">
+        <div class="list-group" id="category-list">
+          <strong class="list-group-item list-group-item-dark">Phones</strong>
+          <a href="IPhone.html" class="list-group-item">iPhone</a>
+          <a href="Samsung.html" class="list-group-item">Samsung</a>
+          <a href="Google.html" class="list-group-item">Google</a>
+          <a href="Vivo.html" class="list-group-item">Vivo</a>
+          <a href="Oppo.html" class="list-group-item">Oppo</a>
+          <a href="Nothing.html" class="list-group-item">Nothing</a>
+
+          <strong class="list-group-item list-group-item-dark mt-3">Laptops</strong>
+          <a href="Lenovo.html" class="list-group-item">Lenovo</a>
+          <a href="Acer.html" class="list-group-item">Acer</a>
+          <a href="ASUS.html" class="list-group-item">ASUS</a>
+          <a href="HP.html" class="list-group-item">HP</a>
+          <a href="Dell.html" class="list-group-item">Dell</a>
+          <a href="Mac.html" class="list-group-item">Mac</a>
+          <a href="Samsung (Paid).html" class="list-group-item">Samsung (Paid)</a>
+
+               <!--    <strong class="list-group-item list-group-item-dark mt-3">Clothes</strong>
+          <a href="Men Clothes.html" class="list-group-item">Men</a>
+          <a href="Women Clothes.html" class="list-group-item">Women</a>
+          <a href="Kids Clothes.html" class="list-group-item">Kids</a> --->
+
+          <strong class="list-group-item list-group-item-dark mt-3">Shoes</strong>
+          <a href="Man Shoes.html" class="list-group-item">Man Shoes</a>
+          <a href="Woman Shoes.html" class="list-group-item">Woman Shoes</a>
+          <a href="Kids Shoes.html" class="list-group-item">Kids Shoes</a>
+        </div>
+      </div>
+
+
+      <!-- Products Grid -->
+      <div class="col-md-9">
+        <div class="row g-4" id="product-list">
+      <div class="container my-5">
+    <h2 class="text-center mb-4">Latest MAC </h2>
+    <div class="row">
+           <!-- MacBook Air 13 (M1) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Air 13 (M1).jpg" class="card-img-top" alt="MacBook Air 13 M1">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Air 13 (M1)</h5>
+      <p class="card-text">₹84,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Air 13 (M2) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Air 13 (M2).png" class="card-img-top" alt="MacBook Air 13 M2">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Air 13 (M2)</h5>
+      <p class="card-text">₹1,14,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Air 15 (M2) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Air 15 (M2).jpeg" class="card-img-top" alt="MacBook Air 15 M2">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Air 15 (M2)</h5>
+      <p class="card-text">₹1,34,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Air 13 (M3) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Air 13 (M3).jpg" class="card-img-top" alt="MacBook Air 13 M3">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Air 13 (M3)</h5>
+      <p class="card-text">₹1,19,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Air 15 (M3) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Air 15 (M3).jpeg" class="card-img-top" alt="MacBook Air 15 M3">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Air 15 (M3)</h5>
+      <p class="card-text">₹1,39,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 13 (M2) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 13 (M2).jpg" class="card-img-top" alt="MacBook Pro 13 M2">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 13 (M2)</h5>
+      <p class="card-text">₹1,29,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 14 (M2 Pro) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 14 (M2 Pro).jpg" class="card-img-top" alt="MacBook Pro 14 M2 Pro">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 14 (M2 Pro)</h5>
+      <p class="card-text">₹1,99,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 16 (M2 Pro) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 16 (M2 Pro).jpeg" class="card-img-top" alt="MacBook Pro 16 M2 Pro">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 16 (M2 Pro)</h5>
+      <p class="card-text">₹2,49,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 14 (M2 Max) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 14 (M2 Max).png" class="card-img-top" alt="MacBook Pro 14 M2 Max">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 14 (M2 Max)</h5>
+      <p class="card-text">₹2,49,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 16 (M2 Max) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 16 (M2 Max).jpg" class="card-img-top" alt="MacBook Pro 16 M2 Max">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 16 (M2 Max)</h5>
+      <p class="card-text">₹3,49,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 14 (M3 Pro) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 14 (M3 Pro).jpeg" class="card-img-top" alt="MacBook Pro 14 M3 Pro">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 14 (M3 Pro)</h5>
+      <p class="card-text">₹1,99,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 16 (M3 Pro) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 16 (M3 Pro).jpeg" class="card-img-top" alt="MacBook Pro 16 M3 Pro">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 16 (M3 Pro)</h5>
+      <p class="card-text">₹2,49,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 14 (M3 Max) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 14 (M3 Max).jpg" class="card-img-top" alt="MacBook Pro 14 M3 Max">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 14 (M3 Max)</h5>
+      <p class="card-text">₹2,89,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- MacBook Pro 16 (M3 Max) -->
+<div class="col-md-3 mb-4">
+  <div class="card shadow-sm">
+    <img src="Image/MacBook Pro 16 (M3 Max).png" class="card-img-top" alt="MacBook Pro 16 M3 Max">
+    <div class="card-body text-center">
+      <h5 class="card-title">MacBook Pro 16 (M3 Max)</h5>
+      <p class="card-text">₹3,49,900</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+          <!-- More products here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
