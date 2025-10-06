@@ -47,4 +47,19 @@ Cloud & DevOps Enthusiast
 
  
 ## 🗂️ Folder Structure
-
+E-Oak Shops/
+ ├──E-Commerce-Website
+     │
+     ├── index.html # Homepage
+     ├── Category.html # Product listing page
+     ├── cart.html # Shopping cart page
+     │
+     ├── js/
+     │ ├── script.js # Handles product fetching & cart logic
+     │ └── api.js # API Gateway integration
+     │
+     ├── css/
+     │ └── style.css # Custom styles
+     │
+     ├── Image/
+     │ └── product-images/ # Product images
